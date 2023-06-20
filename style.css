@@ -1,12 +1,23 @@
 @font-face {
-    font-family: Averta;
-    src: url(./assets/Averta.ttf);
+    font-family: AvertaRegular;
+    src: url(./assets/fonts/Averta-Regular.ttf);
+}
+
+@font-face {
+    font-family: AvertaSemibold;
+    src: url(./assets/fonts/Averta-Semibold.ttf);
+}
+
+@font-face {
+    font-family: AvertaBold;
+    src: url(./assets/fonts/Averta-Bold.ttf);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: AvertaRegular, 'Google Sans', sans-serif;
 }
 
 :root {
@@ -20,12 +31,7 @@
     --gradient3: linear-gradient(135deg, #D6E3FF 6.98%, #FFDCE3 88.6%);
 }
 
-html {
-    font-family: Averta, 'Google Sans', sans-serif;
-}
-
 p {
-    font-weight: 400;
     color: var(--color-black-tint2);
 }
 
@@ -87,6 +93,22 @@ p {
     background-color: #0056b3;
 }
 
+section {
+    padding: 3.5rem 0;
+}
+
+.section-title {
+    margin: 1rem 0;
+    font-family: AvertaBold;
+    font-size: 2.5rem;
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
 /*===========================================
 global end
 =============================================*/
@@ -101,11 +123,14 @@ header start
 }
 
 .site-title {
-    font-size: 2em;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-family: AvertaBold;
+    color: var(--color-black-tint1);
+    margin: 0;
 }
 
 .site-title span {
+    font-family: AvertaBold;
     color: var(--color1);
 }
 
@@ -191,7 +216,7 @@ header start
     }
 
     .mb-active .navi-link {
-        font-size: 1.5em;
+        font-size: 1.5rem;
     }
 
 }
@@ -212,21 +237,66 @@ hero section start
     -webkit-text-fill-color: transparent;
 }
 
-.fs-heading {
-    font-size: 2.3rem;
-    padding-bottom: 4px;
+.hs-name {
+    font-family: AvertaBold;
+    margin-top: .4rem;
+}
+
+.hs-heading {
+    font-family: AvertaBold;
+    font-size: 2rem;
+    padding: .2rem 0;
+
 }
 
 @media (min-width: 768px) {
+    .hs-padding {
+        padding: 2rem 0;
+    }
+
+    .hs-name {
+        font-size: 1.7rem;
+    }
+
+    .hs-heading {
+        font-size: 2.3rem;
+    }
+
     .imgg {
         order: 2;
     }
+
 }
 
 @media (min-width: 992px) {
-    .fs-heading {
+    .hs-name {
+        font-size: 2.5rem;
+    }
+
+    .hs-heading {
         font-size: 3.5rem;
     }
+
+    .hs-paragraph {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hs-heading {
+        font-size: 4rem;
+    }
+
+    .hs-paragraph {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 1400px) {
+    .hs-heading {
+        font-size: 5rem;
+    }
+
 }
 
 /*===========================================
@@ -241,13 +311,13 @@ case study start
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-height: 1350px;
-    gap: 3rem;
+    max-height: 1460px;
+    align-content: space-between;
 }
 
 .cs-card {
-    max-width: calc(50% - 1.5rem);
-    transition: transform 0.3s;
+    max-width: calc(50% - 2.5rem);
+    padding: 2.5rem 0;
 }
 
 .cs-thumb-container {
@@ -269,11 +339,21 @@ case study start
     opacity: 50%;
 }
 
+.cs-title {
+    font-family: AvertaBold;
+    font-size: 1.6rem;
+    margin: 1rem 0;
+}
+
 .cs-link {
     text-decoration: none;
 }
 
-.cs-card:hover {
+.cs-thumb-container {
+    transition: transform 0.3s;
+}
+
+.cs-card:hover .cs-thumb-container {
     transform: scale(1.05);
 }
 
@@ -286,6 +366,19 @@ case study start
     display: block;
 }
 
+@media (max-width: 576px) {
+    .cs-card {
+        margin: 0 .2rem;
+    }
+
+    .cs-title {
+        font-size: 1.3rem;
+        margin: .8rem 0;
+    }
+
+    
+}
+
 @media (max-width: 768px) {
     .cs-container {
         display: block;
@@ -294,6 +387,12 @@ case study start
 
     .cs-card {
         max-width: none;
+    }
+
+    .cs-link {
+        text-decoration: underline;
+        display: block;
+        text-align: right;
     }
 }
 
@@ -305,6 +404,9 @@ case study end
 /*===========================================
 design process start
 =============================================*/
+.section-details {
+    margin-bottom: 2rem;
+}
 
 .timeline {
     margin-top: 3rem;
@@ -333,11 +435,11 @@ design process start
     background: var(--gradient3);
     border-radius: 4px;
     padding: 20px;
-    transition: transform 0.3s;
 }
 
-.step-container:hover .step {
-    transform: scale(1.09);
+.step-title {
+    font-family: AvertaBold;
+    font-size: 1rem;
 }
 
 .step-text {
@@ -396,8 +498,6 @@ design process start
     left: calc(50% + 57px);
 }
 
-@media (min-width: 576px) {}
-
 @media (min-width: 768px) {
     .step-text {
         top: 0;
@@ -410,10 +510,14 @@ design process start
 }
 
 @media (min-width: 992px) {
+    .section-details {
+        max-width: 42%;
+        margin: 0;
+    }
+
     .timeline {
         margin-left: 0;
         flex-direction: column;
-
     }
 
     .step-left {
@@ -435,34 +539,24 @@ testimonials start
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-height: 750px;
-    gap: 3rem;
+    max-height: 1160px;
+    align-content: space-between;
 }
 
 .tm-card {
-    max-width: calc(50% - 1.5rem);
+    max-width: calc(50% - 3rem);
+    padding: 2.5rem 0;
 }
 
-@media (max-width: 768px) {
-
-    .tm-container {
-        display: block;
-        max-height: none;
-    }
-
-    .tm-card {
-        max-width: none;
-        margin-top: 3rem;
-    }
-}
-
-
-.tm-card .logo {
+.tm-logo {
     height: 40px;
+    margin-bottom: 1rem;
 }
 
-.tm-card .comment {
-    font-size: 12pt;
+.tm-comment {
+    font-family: AvertaBold;
+    font-size: 1rem;
+    color: var(--color-black);
 }
 
 .horizontal-center {
@@ -471,23 +565,41 @@ testimonials start
 }
 
 .tm-photo {
-    height: 50px;
+    height: 70px;
 }
 
 .tm-name {
+    font-family: AvertaBold;
+    color: var(--color-black-tint2);
     margin-left: 1rem;
-    font-size: 10pt;
-    font-weight: 700;
+    font-size: 1rem;
 }
 
 .tm-position {
-    margin-left: 0.5rem;
-    font-size: 8pt;
-    font-weight: 400;
+    font-size: .8rem;
+    color: var(--color-black-tint2);
 }
 
 .tm-position::before {
-    content: '/ ';
+    content: '/';
+    margin: 0 .5rem;
+}
+
+@media (max-width: 576px) {
+    .tm-card {
+        margin: 0 .2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tm-container {
+        display: block;
+        max-height: none;
+    }
+
+    .tm-card {
+        max-width: none;
+    }
 }
 
 /*===========================================
@@ -522,17 +634,35 @@ blogs start
     width: 100%;
 }
 
+.blog-details-holder {
+    margin: 1rem 1.5rem;
+}
+
 .blog-title {
-    margin-top: 1rem;
-    font-size: 12pt;
+    margin: .5rem 0;
+    font-family: AvertaBold;
+    font-size: .8rem;
 }
 
 .blog-summary {
-    font-size: 10pt;
+    font-size: .7rem;
 }
 
 .blog-link {
-    text-decoration: none;
+    text-align: right;
+    display: block;
+    font-size: .7rem;
+}
+
+@media (min-width: 576px) {
+    .blog-details-holder {
+        margin: 1rem .5rem;
+    }
+
+    .blog-link {
+        text-decoration: none;
+        text-align: left;
+    }
 }
 
 /*===========================================
@@ -544,18 +674,27 @@ blogs end
 footer start
 =============================================*/
 
+.fo-que {
+    font-family: AvertaBold;
+    color: var(--color-black-tint1);
+    font-size: 1rem;
+}
+
 .f-heading {
-    font-size: 3rem;
+    font-family: AvertaBold;
+    font-size: 2.5rem;
 }
 
 .f-sub-heading {
+    font-family: AvertaBold;
+    font-size: 1.5rem;
     display: inline-block;
     color: white;
     background-color: var(--color1);
-    padding-left: 1.8rem;
-    padding-right: 1.8rem;
-    padding-top: .8rem;
-    padding-bottom: .8rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
 }
 
 .required {
@@ -567,13 +706,14 @@ footer start
     font-size: 1rem;
     margin-top: .5rem;
     margin-bottom: .5rem;
+    color: var(--color-black-tint2)
 }
 
 .form-control1 {
     display: block;
     padding: 0.75rem 0.75rem;
     font-size: 1.3rem;
-    line-height: 1.5;
+    line-height: 1.2;
     color: #495057;
     border: 1px solid #ced4da;
     border-radius: .5rem;
@@ -653,4 +793,22 @@ footer start
         display: inline-block;
     }
 
+    .fo-que {
+        font-size: 1.5rem;
+    }
+
+    .f-heading {
+        font-size: 2.2rem;
+    }
+
+    .f-sub-heading {
+        color: #2C364A;
+        background-color: #BAE2BA;
+    }
+}
+
+@media (min-width: 1200px) {
+    .fo-sub {
+        max-width: 80%;
+    }
 }
