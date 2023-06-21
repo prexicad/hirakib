@@ -498,6 +498,18 @@ design process start
     left: calc(50% + 57px);
 }
 
+.process-summary {
+    max-width: 500px;
+    padding: .8rem;
+    margin: 0 auto;
+    text-align: center;
+    font-family: AvertaBold;
+    font-size: .8rem;
+    color: var(--color1);
+    border: 1px dashed var(--color1);
+    border-radius: 4px;
+}
+
 @media (min-width: 768px) {
     .step-text {
         top: 0;
