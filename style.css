@@ -29,6 +29,8 @@
     --gradient1: linear-gradient(to right, var(--color1), var(--color2), var(--color2));
     --gradient2: linear-gradient(to right, var(--color1), var(--color2));
     --gradient3: linear-gradient(135deg, #D6E3FF 6.98%, #FFDCE3 88.6%);
+    --radial-gradient1: radial-gradient(50% 50% at 50% 50%, #E5F9E0 0%, rgba(229, 249, 224, 0) 100%);
+    --radial-gradient2: radial-gradient(50% 50% at 50% 50%, #F2E5F9 0%, rgba(242, 229, 249, 0) 100%);
 }
 
 p {
@@ -44,6 +46,7 @@ p {
 }
 
 .bg-black2 {
+    z-index: -2;
     background-color: #F6F7FB;
 }
 
@@ -249,6 +252,17 @@ hero section start
 
 }
 
+.hs-bg-shadow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 600px;
+    width: 600px;
+    opacity: 0.75;
+    background: var(--radial-gradient1);
+    z-index: -1;
+}
+
 @media (min-width: 768px) {
     .hs-padding {
         padding: 2rem 0;
@@ -364,6 +378,29 @@ case study start
 
 .cs-card:hover .cs-arrow {
     display: block;
+}
+
+
+.cs-bg-shadow1 {
+    position: absolute;
+    top: -100px;
+    left: -150px;
+    height: 600px;
+    width: 600px;
+    opacity: 0.75;
+    background: var(--radial-gradient2);
+    z-index: -1;
+}
+
+.cs-bg-shadow2 {
+    position: absolute;
+    top: 30%;
+    right: 25%;
+    height: 600px;
+    width: 600px;
+    opacity: 0.75;
+    background: var(--radial-gradient1);
+    z-index: -1;
 }
 
 @media (max-width: 576px) {
@@ -508,6 +545,36 @@ design process start
     color: var(--color1);
     border: 1px dashed var(--color1);
     border-radius: 4px;
+    z-index: 1;
+}
+
+.step-shadow {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    height: 300px;
+    width: 300px;
+    /* opacity: 0.75; */
+    z-index: -1;
+}
+
+.step-shadow-v1 {
+    background: var(--radial-gradient1);
+}
+
+.step-shadow-v2 {
+    background: var(--radial-gradient2);
+}
+
+.step-shadow-v3 {
+    position: absolute;
+    top: 20px;
+    left: calc(50% - 300px);
+    height: 150px;
+    width: 600px;
+    /* opacity: 0.75; */
+    z-index: -1;
+    background: radial-gradient(50% 50.00% at 50% 50.00%, #E5F9E0 0%, rgba(229, 249, 224, 0.00) 100%);
 }
 
 @media (min-width: 768px) {
@@ -558,6 +625,8 @@ testimonials start
 .tm-card {
     max-width: calc(50% - 3rem);
     padding: 2.5rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 .tm-logo {
@@ -595,6 +664,25 @@ testimonials start
 .tm-position::before {
     content: '/';
     margin: 0 .5rem;
+}
+
+.tm-shadow {
+    position: absolute;
+    top: 0;
+    left: -50px;
+    height: 400px;
+    width: 400px;
+    /* opacity: 0.75; */
+}
+
+.tm-shadow-v1 {
+    z-index: -1;
+    background: var(--radial-gradient1);
+}
+
+.tm-shadow-v2 {
+    z-index: -1;
+    background: var(--radial-gradient2);
 }
 
 @media (max-width: 576px) {
@@ -664,6 +752,33 @@ blogs start
     text-align: right;
     display: block;
     font-size: .7rem;
+}
+
+.blog-shadow {
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    /* opacity: 0.75; */
+    background: var(--radial-gradient1);
+}
+
+.blog-shadow-v1 {
+    top: calc(50% - 200px);
+    left: 0;
+    z-index: -1;
+}
+
+.blog-shadow-v2 {
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    background: var(--radial-gradient2);
+    z-index: -1;
+}
+
+.blog-shadow-v3 {
+    top: calc(50% - 200px);
+    right: 0;
+    z-index: -1;
 }
 
 @media (min-width: 576px) {
@@ -762,6 +877,28 @@ footer start
     color: var(--color-black);
     border-bottom: 1px solid var(--color-black-tint2);
     margin-top: 1.5rem;
+}
+
+.foo-shadow1 {
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    height: 400px;
+    width: 400px;
+    /* opacity: 0.75; */
+    background: var(--radial-gradient2);
+    z-index: -1;
+}
+
+.foo-shadow2 {
+    position: absolute;
+    top: calc(50% - 200px);
+    left: calc(50% - 200px);
+    height: 400px;
+    width: 400px;
+    /* opacity: 0.75; */
+    background: var(--radial-gradient1);
+    z-index: -1;
 }
 
 @media (min-width: 768px) {
